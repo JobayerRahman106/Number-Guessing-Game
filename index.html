@@ -7,17 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="heading">Player-1</h1>
-    <img src="./images/congratulations.gif" alt="">
-    <h2 class="anotherheading"> Chances : <span></span> </h2>
-    <input class="playeroneinput" type="text" placeholder="Please give a number">
-    <button class="playeronebutton">Start</button>
-    <input class="playertwoinput" type="text" placeholder="Guess the number">
-    <button class="playertwobutton">Guess</button>
-    <br>
-    <small class="error"></small>
-    <br>
-    <button class="reset">Reset</button>
+
+    <div class="container">
+        <h1 class="heading">Player-1</h1>
+
+        <h3 class="anotherheading"> Chances : <span></span> </h3>
+
+        <input class="playeroneinput" type="text" placeholder="Enter Number">
+
+        <button class="playeronebutton">
+            Submit
+        </button>
+
+        <input class="playertwoinput" type="text" placeholder="Guess Number">
+
+        <button class="playertwobutton">
+            Guess
+        </button>
+
+        <p class="error"></p>
+
+        <img src="./images/congratulations.gif" alt="Winner">
+        
+        <button class="reset">Reset Game</button>
+    </div>
 
     <script src="./script.js"></script>
 </body>
