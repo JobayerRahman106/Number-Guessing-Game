@@ -63,6 +63,8 @@ playertwobutton.addEventListener("click", function () {
           heading.innerHTML = "Player-1 Winner";
           displayControl("p1np2n");
         }
+        playertwoinput.value = "";
+        
       } else {
         error.style.color = "red";
         error.innerHTML = "Please give a number between 1 to 10";
