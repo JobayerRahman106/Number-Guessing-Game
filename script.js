@@ -7,6 +7,7 @@ let anotherheading = document.querySelector(".anotherheading");
 let error = document.querySelector(".error");
 let span = document.querySelector("span");
 let img = document.querySelector("img");
+let reset = document.querySelector(".reset");
 
 let playerOneNumber;
 let count = 5;
@@ -17,7 +18,7 @@ playeronebutton.addEventListener("click", function () {
     error.style.color = "red";
     error.innerHTML = "Please give a number";
   } else {
-    if (Number(playeroneinput.value)) {
+    if (!isNaN(playeroneinput.value))  {
       if (
         Number(playeroneinput.value) >= 1 &&
         Number(playeroneinput.value) <= 10
@@ -45,7 +46,7 @@ playertwobutton.addEventListener("click", function () {
     error.style.color = "red";
     error.innerHTML = "Please give a number";
   } else {
-    if (Number(playertwoinput.value)) {
+    if (!isNaN(playertwoinput.value))  {
       if (
         Number(playertwoinput.value) >= 1 &&
         Number(playertwoinput.value) <= 10
@@ -73,6 +74,32 @@ playertwobutton.addEventListener("click", function () {
   }
 });
 
+//Reset Function
+reset.addEventListener("click", function () {
+  // Reset variables
+  playerOneNumber = "";
+  count = 5;
+
+  // Clear input fields
+  playeroneinput.value = "";
+  playertwoinput.value = "";
+
+  // Reset texts
+  heading.innerHTML = "Player-1";
+  error.innerHTML = "";
+  span.innerHTML = count;
+
+  // Hide/Show elements
+  playeroneinput.style.display = "inline-block";
+  playeronebutton.style.display = "inline-block";
+
+  playertwoinput.style.display = "none";
+  playertwobutton.style.display = "none";
+
+  anotherheading.style.display = "none";
+  img.style.display = "none";
+});
+
 function displayControl(type) {
   if (type == "p1np2b") {
     playeroneinput.style.display = "none";
@@ -85,6 +112,6 @@ function displayControl(type) {
     playertwoinput.style.display = "none";
     playertwobutton.style.display = "none";
     anotherheading.style.display = "none";
-    img.style.display = "block"
+    img.style.display = "block";
   }
 }
